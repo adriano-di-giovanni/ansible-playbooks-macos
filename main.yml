@@ -2,4 +2,15 @@
 - hosts: localhost
   connection: local
   roles:
-    - rbenv
+    - gitignore
+    # - rbenv
+  vars:
+    gitignore_files:
+      - Global/Ansible
+      - Global/Dropbox
+      - Global/Redis
+      - Global/SublimeText
+      - Global/Vagrant
+      - Global/VirtualEnv
+      - Global/XCode
+      - Global/macOS

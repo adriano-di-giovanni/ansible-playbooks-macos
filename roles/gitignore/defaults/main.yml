@@ -1,0 +1,1 @@
+gitignore_tmp_dir: /tmp/{{ ansible_date_time.epoch }}

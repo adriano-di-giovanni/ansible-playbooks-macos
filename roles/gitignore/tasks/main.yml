@@ -1,0 +1,30 @@
+---
+- name: checkout github/gitignore
+  git: >
+    repo=https://github.com/github/gitignore.git
+    dest={{ gitignore_tmp_dir }}/gitignore
+
+- name: consolidate selected .gitignore files
+  copy: >
+    src={{ gitignore_tmp_dir }}/gitignore/{{ item }}.gitignore
+    dest={{ gitignore_tmp_dir }}
+  with_items: '{{ gitignore_files }}'
+
+- name: assemble selected .gitignore files into ~/.gitignore_global
+  assemble: >
+    src={{ gitignore_tmp_dir }}
+    dest=~/.gitignore_global
+    delimiter='\n'
+    backup=yes
+    regexp=^.*\\.gitignore
+
+- name: put ~/.gitignore_global into use
+  git_config: >
+    name=core.excludesfile
+    scope=global
+    value=~/.gitignore_global
+
+- name: clean up
+  file: >
+    path={{ gitignore_tmp_dir }}
+    state=absent
