@@ -3,7 +3,7 @@
   connection: local
   roles:
     - gitignore
-    # - rbenv
+    - rbenv
   vars:
     gitignore_files:
       - Global/Ansible
