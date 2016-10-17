@@ -4,7 +4,6 @@ Ansible playbooks to provision my macOS workstation
 
 ## Requirements
 
-* Homebrew
 * Ansible
 * Git
 
