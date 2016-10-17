@@ -1,2 +1,0 @@
----
-- homebrew: name=rbenv state=present update_homebrew=yes

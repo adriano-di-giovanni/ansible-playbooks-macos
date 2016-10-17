@@ -1,0 +1,35 @@
+---
+- name: checkout rbenv
+  git: >
+    repo=https://github.com/rbenv/rbenv.git
+    dest=~/.rbenv
+
+- name: checkout ruby-build
+  git: >
+    repo=https://github.com/rbenv/ruby-build.git
+    dest=~/.rbenv/plugins/ruby-build
+
+- name: add ~/.rbenv/bin to path in .bash_profile
+  lineinfile: >
+    dest=~/.bash_profile
+    line='export PATH=~/.rbenv/bin:${PATH}'
+    state=present
+
+- name: add ~/.rbenv/bin/rbenv init to .bash_profile
+  lineinfile: >
+    dest=~/.bash_profile
+    line='if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi'
+    state=present
+
+- name: install a ruby version
+  command: >
+    ~/.rbenv/bin/rbenv install {{ rbenv_ruby_version }}
+    creates=~/.rbenv/versions/{{ rbenv_ruby_version }}
+
+- name: change global ruby version
+  command: >
+    ~/.rbenv/bin/rbenv global {{ rbenv_ruby_version }}
+
+- name: update shims
+  command: >
+    ~/.rbenv/bin/rbenv rehash

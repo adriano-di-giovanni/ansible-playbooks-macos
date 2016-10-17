@@ -1,5 +1,5 @@
 ---
 - hosts: localhost
   connection: local
-  tasks:
-    - include: tasks/homebrew.yml
+  roles:
+    - rbenv
