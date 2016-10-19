@@ -6,18 +6,13 @@ Ansible playbooks to provision my macOS workstation
 
 * Ansible
 * Git
+* OpenSSL
 
 ## Usage
 
 ```bash
 ansible-playbook -i inventory main.yml
 ```
-
-## Not yet automated
-
-* Packer
-* Vagrant
-* Virtualbox
 
 ## License
 

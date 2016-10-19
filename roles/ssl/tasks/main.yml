@@ -1,0 +1,3 @@
+---
+- include: ca_create_root_pair.yml
+- include: ca_create_intermediate_pair.yml

@@ -4,6 +4,8 @@
   roles:
     - gitignore
     - rbenv
+    - role: ssl
+      become: true
   vars:
     gitignore_files:
       - Global/Ansible
