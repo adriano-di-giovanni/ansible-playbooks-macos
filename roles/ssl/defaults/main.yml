@@ -1,6 +1,0 @@
----
-root_ca_dir: /root/ca
-intermediate_ca_dir: '{{ root_ca_dir }}/intermediate'
-
-root_certificate_file: ca.cert.pem
-intermediate_certificate_file: intermediate.cert.pem
