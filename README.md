@@ -6,12 +6,11 @@ Ansible playbooks to provision my macOS workstation
 
 * Ansible
 * Git
-* OpenSSL
 
 ## Usage
 
 ```bash
-ansible-playbook -i inventory main.yml
+ansible-playbook -i inventory playbook.yml
 ```
 
 ## License
