@@ -5,6 +5,17 @@
     - gitignore
     - rbenv
   tasks:
+    - homebrew:
+        name: '{{ item }}'
+        state: present
+        update_homebrew: yes
+      with_items:
+        - flow
+        - watchman
+      tags:
+        - brew
+        - homebrew
+
     - homebrew_tap:
         name: '{{ item }}'
         state: present
