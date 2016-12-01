@@ -6,6 +6,8 @@ Ansible playbooks to provision my macOS workstation
 
 * Ansible
 * Git
+* Homebrew
+* Atom
 
 ## Usage
 

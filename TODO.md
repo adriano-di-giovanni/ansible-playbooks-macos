@@ -6,7 +6,7 @@ Virtualbox
 Adobe Illustrator
 Adobe Photoshop
 Android Studio
-Atom and its packages
+Atom packages
 Dropbox
 Evernote
 Firefox
