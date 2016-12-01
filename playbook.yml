@@ -4,6 +4,25 @@
   roles:
     - gitignore
     - rbenv
+  tasks:
+    - homebrew_tap:
+        name: '{{ item }}'
+        state: present
+      with_items:
+        - caskroom/cask
+      tags:
+        - brew
+        - homebrew
+
+    - homebrew_cask:
+        name: '{{ item }}'
+        state: present
+      with_items:
+        - haskell-platform
+      tags:
+        - brew
+        - homebrew
+
   vars:
     gitignore_files:
       - Global/Ansible
