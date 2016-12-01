@@ -10,7 +10,7 @@ Ansible playbooks to provision my macOS workstation
 ## Usage
 
 ```bash
-ansible-playbook -i inventory playbook.yml
+ansible-playbook playbook.yml
 ```
 
 ## License
