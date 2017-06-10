@@ -2,7 +2,7 @@
 - hosts: localhost
   connection: local
   roles:
-    - gitignore
+    - { role: gitignore, tags: [ 'gitignore' ] }
     - rbenv
   tasks:
     - homebrew:
@@ -41,7 +41,7 @@
       - Global/Redis
       - Global/SublimeText
       - Global/Vagrant
-      - Global/VirtualEnv
+#      - Global/VirtualEnv
       - Global/XCode
       - Global/macOS
       - Node
